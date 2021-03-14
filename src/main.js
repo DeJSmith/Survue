@@ -1,6 +1,6 @@
 import Vue from "vue";
 import App from "./App.vue";
-import store from "./store/modules/surveys";
+import store from "./store/surveys";
 
 Vue.config.productionTip = false;
 
