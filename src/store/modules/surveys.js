@@ -8,33 +8,46 @@ export default new Vuex.Store({
   state: {
     surveys: [
       {
-        id: 1,
-        title: "First Survey",
+        id: shortid.generate(),
+        title: "Me mes",
         questions: [
           {
-            question: "Is the Sky Blue?",
-            answers: ["Yes", "No"],
+            question: "Is water wet?",
+            answers: ["Yes", "No", "37"],
           },
           {
-            question: "Is the Sky Blue?",
-            answers: ["Yes", "No"],
+            question: "How much Dogecoin is one Bitcoin worth? 🙊",
+            answers: ["1014023.04101", "133,700,000.2", "much"],
+          },
+          {
+            question: "Where is GME going?",
+            answers: ["To the dogs 🐶", "To the moon 🚀", "The sea floor 🌊"],
           },
         ],
         created: new Date().toDateString(),
       },
       {
-        id: 2,
-        title: "Second Survey",
+        id: shortid.generate(),
+        title: "Lord of the Rings",
 
         created: new Date().toDateString(),
         questions: [
           {
-            question: "24 * 4?",
-            answers: ["13", "24", "69", "96"],
+            question:
+              "What is the first voice we hear in The Fellowship of the Ring?",
+            answers: ["Frodo", "Gandalf", "Galadriel", "Elrond"],
           },
           {
-            question: "Is the Sky Blue?",
-            answers: ["Yes", "No"],
+            question: "What does Gollum call the Ring of Power?",
+            answers: ["My Darling", "My Precious", "My Lovely", "My Treasure"],
+          },
+          {
+            question: "In The Two Towers, who is Saruman's spy in Rohan?",
+            answers: ["Gamling", "Gimli", "Gollum", "Grima"],
+          },
+          {
+            question: "In The Return of the King, who kills the Witch King?",
+            answers: ["Eowyn", "Arwen", "Gandalf", "Aragorn"],
           },
         ],
       },
