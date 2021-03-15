@@ -62,6 +62,9 @@ export default new Vuex.Store({
       state.surveys.splice(payload.index, 1);
       state.surveys.unshift(payload.updated);
     },
+    deleteSurvey: (state, index) => {
+      state.surveys.splice(index, 1);
+    },
   },
   actions: {
     selectSurvey(state, survey) {
@@ -89,6 +92,12 @@ export default new Vuex.Store({
       const index = this.state.surveys.map((e) => e.id).indexOf(updated.id);
       console.log(index);
       this.commit("updateSurvey", { index: index, updated: updated });
+    },
+    removeSurvey(state, id) {
+      console.log("delete Survey");
+      const index = state.state.surveys.find((survey) => survey.id === id);
+
+      this.commit("deleteSurvey", index);
     },
   },
   modules: {},

@@ -19,7 +19,7 @@ export default {
 <style scoped>
 .card {
   width: calc(100% - 20px);
-  height: 100px;
+  height: 150px;
   font-size: 16px;
   font-weight: 400;
   box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.1);
@@ -37,5 +37,24 @@ export default {
 .title {
   font-size: 20px;
   font-weight: 500;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: 500;
+  background: white;
+  border: 1px solid rgb(168, 56, 50);
+  border-radius: 5px;
+  color: rgb(168, 56, 50);
+  transition: all 0.3s ease-in-out;
+  margin: 5px;
+  z-index: 50;
+}
+
+button:hover {
+  cursor: pointer;
+  background: rgb(168, 56, 50);
+  color: white;
 }
 </style>

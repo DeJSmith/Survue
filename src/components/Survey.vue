@@ -4,7 +4,10 @@
       <div class="title" v-if="!!selectedSurvey">Edit Survey</div>
       <div class="title" v-if="!selectedSurvey">Create Survey</div>
       <button @click="clearSelectedSurvey" class="button">
-        New survey
+        New Survey
+      </button>
+      <button class="button_minus" v-if="!!selectedSurvey" @click="onDelete">
+        Delete Survey
       </button>
     </div>
 
@@ -26,7 +29,11 @@ export default {
     UpdateSurvey,
   },
   methods: {
-    ...mapActions(["clearSelectedSurvey"]),
+    ...mapActions(["clearSelectedSurvey", "removeSurvey"]),
+    onDelete() {
+      this.removeSurvey(this.selectedSurvey.id);
+      this.clearSelectedSurvey();
+    },
   },
   computed: mapGetters(["selectedSurvey"]),
 };
@@ -75,5 +82,23 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   align-items: space-between;
+}
+
+.button_minus {
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: 500;
+  background: white;
+  border: 1px solid rgb(168, 56, 50);
+  border-radius: 5px;
+  color: rgb(168, 56, 50);
+  transition: all 0.3s ease-in-out;
+  margin: 5px;
+}
+
+.button_minus:hover {
+  cursor: pointer;
+  background: rgb(168, 56, 50);
+  color: white;
 }
 </style>
